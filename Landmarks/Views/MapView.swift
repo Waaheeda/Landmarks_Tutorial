@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    var coordinate : CLLocationCoordinate2D
+    
     //@Stat attribute to estabish a source of the data in app that we can modify from more than one view
     //underlying storage and automatic updates to the views that depend on this value will be managed by SwiftUI
     
@@ -16,11 +18,19 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region)
+            .onAppear{
+                setRegion(coordinate)
+            }
+    }
+    
+    private func setRegion(_ coordinate : CLLocationCoordinate2D)
+    {
+        region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2) )
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(coordinate: CLLocationCoordinate2D(latitude: 34.11, longitude: -116.166))
     }
 }

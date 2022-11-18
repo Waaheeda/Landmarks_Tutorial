@@ -86,53 +86,9 @@ import CoreData
 struct ContentView : View
 {
     var body: some View{
-        VStack(alignment:.center) {
-            
-            MapView()
-                .ignoresSafeArea(edges:.all)
-                .frame(width:400,height:500)
-                .offset(y:-100)
-                
-            CircleImage()
-                .offset(x: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/, y: -250)
-                .padding(.bottom,-250)
-            
-            Text("Turtle Rock")
-                .font(.title)
-                .fontWeight(.black)
-                .foregroundColor(Color.pink)
-                .multilineTextAlignment(.leading)
-            .padding([.top, .bottom, .trailing])
-            
-            HStack {
-                Text("National Park")
-                    .font(.subheadline)
-                    .fontWeight(.black)
-                .foregroundColor(Color.black)
-                Spacer()
-                Text("California")
-                    .font(.subheadline)
-                    .fontWeight(.black)
-                    .foregroundColor(Color.black)
-                
-                
-            }
-            
-            Divider()
-            
-            Text("About the Turtle Rock")
-                .font(.title2)
-                .fontWeight(.black)
-                .foregroundColor(Color.black)
-                .multilineTextAlignment(TextAlignment.leading)
-            
-            Text("Turtle Rock is a neighborhood in the south part of Irvine, Orange County, California, near Concordia University, Irvine and the University of California.")
-                
-                
-
-        }.padding(16)
-        Spacer()
+      //LandmarkDetailView()
         
+        LandmarkList()
     }
     
     
