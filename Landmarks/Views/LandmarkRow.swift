@@ -20,6 +20,11 @@ struct LandmarkRow: View {
             Text("\(landmark.name)")
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }.padding(16)
         
     }
@@ -36,5 +41,6 @@ struct LandmarkRow_Previews: PreviewProvider {
                  
         }
         .previewLayout(.fixed(width: 300, height: 70))
+        
     }
 }

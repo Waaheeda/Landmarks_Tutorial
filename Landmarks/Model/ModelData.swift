@@ -32,9 +32,10 @@ func load<T:Decodable>(_ filename:String) -> T
         let decoder = JSONDecoder()
         return try decoder.decode(T.self, from:data)
     }
-    catch
+    catch let jsonError as NSError
     {
-        fatalError("Couldnt parse file \(filename)" )
+        print("JSON decode failed: \(jsonError.localizedDescription)")
+        fatalError(jsonError.description)
 
     }
     
